@@ -3,15 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div>text-sm</div>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/post/feed.js" type="module"></script>
     <script type="module" src="js/menu.js"></script>
-    <title>Feed | CSS-framework</title>
+    <title>feed | CSS-framework</title>
   </head>
-
   <body class="bg-gray-100">
     <header class="bg-customPurple text-black p-2">
       <nav class="container mx-auto">
@@ -32,32 +28,35 @@
           <div class="hidden md:flex items-center space-x-4">
             <div class="flex flex-col sm:flex-row justify-between py-3 px-6">
               <form action="" class="w-full sm:max-w-md">
-                <div
-                  class="relative flex items-center text-gray-400 focus-within:text-black"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-5 h-5 absolute ml-3 pointer-events-none"
+                <fieldset>
+                  <div
+                    class="relative flex items-center text-gray-400 focus-within:text-black"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-5 h-5 absolute ml-3 pointer-events-none"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                      />
+                    </svg>
+                    <input
+                      type="text"
+                      name="search"
+                      id="searchInput"
+                      placeholder="Search post"
+                      autocomplete="off"
+                      aria-label="Search post"
+                      class="w-full pr-3 pl-10 py-2 font-semibold placeholder-gray-500 text-black rounded-2xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2"
                     />
-                  </svg>
-                  <input
-                    type="text"
-                    name="search"
-                    placeholder="Search post"
-                    autocomplete="off"
-                    aria-label="Search post"
-                    class="w-full pr-3 pl-10 py-2 font-semibold placeholder-gray-500 text-black rounded-2xl border-none ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2"
-                  />
-                </div>
+                  </div>
+                </fieldset>
               </form>
             </div>
             <a
@@ -76,7 +75,7 @@
               >Option</a
             >
             <a
-              href="/feed.html"
+              href="/index.html"
               class="py-4 px-2 text-black font-semibold hover:text-white transition duration-300"
               >Signup</a
             >
@@ -189,189 +188,25 @@
           <div class="flex items-center space-x-4">
             <span class="text-gray-700">Sort by:</span>
             <select
+              id="sortSelect"
               class="border rounded-md px-3 py-1.5 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option>Most Recent</option>
-              <option>Most Popular</option>
-              <option>Most Commented</option>
+              <option value="travel">Travel</option>
+              <option value="dog">dog</option>
+              <option value="frontend">frontend</option>
+              <option value="meme">meme</option>
+              <option value="numerouno">numerouno</option>
             </select>
           </div>
-        </div>
-
-        <div class="grid gap-4">
-          <!-- Post 1 -->
-          <section>
-            <div
-              class="max-w bg-white rounded-lg shadow-md overflow-hidden transform transition-all hover:scale-105"
-            >
-              <svg
-                class="relative left-5 top-2"
-                width="31"
-                height="31"
-                viewBox="0 0 31 31"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M29.8929 23.25V27.6786C29.8929 28.2658 29.6596 28.8291 29.2443 29.2443C28.8291 29.6596 28.2659 29.8929 27.6786 29.8929H23.25M23.25 1.10715H27.6786C28.2659 1.10715 28.8291 1.34044 29.2443 1.7557C29.6596 2.17096 29.8929 2.73417 29.8929 3.32143V7.75M1.10718 7.75V3.32143C1.10718 2.73417 1.34047 2.17096 1.75573 1.7557C2.17099 1.34044 2.7342 1.10715 3.32146 1.10715H7.75003M7.75003 29.8929H3.32146C2.7342 29.8929 2.17099 29.6596 1.75573 29.2443C1.34047 28.8291 1.10718 28.2658 1.10718 27.6786V23.25M15.5 14.3929C16.6746 14.3929 17.801 13.9263 18.6315 13.0958C19.462 12.2652 19.9286 11.1388 19.9286 9.96429C19.9286 8.78976 19.462 7.66333 18.6315 6.83282C17.801 6.0023 16.6746 5.53572 15.5 5.53572C14.3255 5.53572 13.1991 6.0023 12.3686 6.83282C11.538 7.66333 11.0715 8.78976 11.0715 9.96429C11.0715 11.1388 11.538 12.2652 12.3686 13.0958C13.1991 13.9263 14.3255 14.3929 15.5 14.3929ZM23.921 24.3571C23.3486 22.5736 22.2248 21.0178 20.7114 19.914C19.198 18.8102 17.3732 18.2155 15.5 18.2155C13.6269 18.2155 11.8021 18.8102 10.2887 19.914C8.77529 21.0178 7.65144 22.5736 7.07911 24.3571H23.921Z"
-                  stroke="black"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <div class="p-2">
-                <h2
-                  class="text-lg font-semibold text-gray-800 hover:text-blue-500"
-                >
-                  Discover the Unknown
-                </h2>
-                <p class="mt-2 text-sm text-gray-600">
-                  Uncover fascinating secrets and little-known facts about the
-                  world.
-                </p>
-                <div class="mt-4">
-                  <a
-                    href="#"
-                    class="inline-block px-2 py-2 bg-teal-500 text-white text-sm font-medium rounded-lg hover:bg-teal-300 transition-colors"
-                  >
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Post 2 -->
-          <section>
-            <div
-              class="max-w bg-white rounded-lg shadow-md overflow-hidden transform transition-all hover:scale-105"
-            >
-              <svg
-                class="relative left-5 top-2"
-                width="31"
-                height="31"
-                viewBox="0 0 31 31"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M29.8929 23.25V27.6786C29.8929 28.2658 29.6596 28.8291 29.2443 29.2443C28.8291 29.6596 28.2659 29.8929 27.6786 29.8929H23.25M23.25 1.10715H27.6786C28.2659 1.10715 28.8291 1.34044 29.2443 1.7557C29.6596 2.17096 29.8929 2.73417 29.8929 3.32143V7.75M1.10718 7.75V3.32143C1.10718 2.73417 1.34047 2.17096 1.75573 1.7557C2.17099 1.34044 2.7342 1.10715 3.32146 1.10715H7.75003M7.75003 29.8929H3.32146C2.7342 29.8929 2.17099 29.6596 1.75573 29.2443C1.34047 28.8291 1.10718 28.2658 1.10718 27.6786V23.25M15.5 14.3929C16.6746 14.3929 17.801 13.9263 18.6315 13.0958C19.462 12.2652 19.9286 11.1388 19.9286 9.96429C19.9286 8.78976 19.462 7.66333 18.6315 6.83282C17.801 6.0023 16.6746 5.53572 15.5 5.53572C14.3255 5.53572 13.1991 6.0023 12.3686 6.83282C11.538 7.66333 11.0715 8.78976 11.0715 9.96429C11.0715 11.1388 11.538 12.2652 12.3686 13.0958C13.1991 13.9263 14.3255 14.3929 15.5 14.3929ZM23.921 24.3571C23.3486 22.5736 22.2248 21.0178 20.7114 19.914C19.198 18.8102 17.3732 18.2155 15.5 18.2155C13.6269 18.2155 11.8021 18.8102 10.2887 19.914C8.77529 21.0178 7.65144 22.5736 7.07911 24.3571H23.921Z"
-                  stroke="black"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <div class="p-2">
-                <h2
-                  class="text-lg font-semibold text-gray-800 hover:text-blue-500"
-                >
-                  Tips for Better Productivity
-                </h2>
-                <p class="mt-2 text-sm text-gray-600">
-                  Learn practical strategies to maximize your focus and
-                  efficiency.
-                </p>
-                <div class="mt-4">
-                  <a
-                    href="#"
-                    class="inline-block px-2 py-2 bg-teal-500 text-white text-sm font-medium rounded-lg hover:bg-teal-300 transition-colors"
-                  >
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Post 3 -->
-          <section>
-            <div
-              class="max-w bg-white rounded-lg shadow-md overflow-hidden transform transition-all hover:scale-105"
-            >
-              <svg
-                class="relative left-5 top-2"
-                width="31"
-                height="31"
-                viewBox="0 0 31 31"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M29.8929 23.25V27.6786C29.8929 28.2658 29.6596 28.8291 29.2443 29.2443C28.8291 29.6596 28.2659 29.8929 27.6786 29.8929H23.25M23.25 1.10715H27.6786C28.2659 1.10715 28.8291 1.34044 29.2443 1.7557C29.6596 2.17096 29.8929 2.73417 29.8929 3.32143V7.75M1.10718 7.75V3.32143C1.10718 2.73417 1.34047 2.17096 1.75573 1.7557C2.17099 1.34044 2.7342 1.10715 3.32146 1.10715H7.75003M7.75003 29.8929H3.32146C2.7342 29.8929 2.17099 29.6596 1.75573 29.2443C1.34047 28.8291 1.10718 28.2658 1.10718 27.6786V23.25M15.5 14.3929C16.6746 14.3929 17.801 13.9263 18.6315 13.0958C19.462 12.2652 19.9286 11.1388 19.9286 9.96429C19.9286 8.78976 19.462 7.66333 18.6315 6.83282C17.801 6.0023 16.6746 5.53572 15.5 5.53572C14.3255 5.53572 13.1991 6.0023 12.3686 6.83282C11.538 7.66333 11.0715 8.78976 11.0715 9.96429C11.0715 11.1388 11.538 12.2652 12.3686 13.0958C13.1991 13.9263 14.3255 14.3929 15.5 14.3929ZM23.921 24.3571C23.3486 22.5736 22.2248 21.0178 20.7114 19.914C19.198 18.8102 17.3732 18.2155 15.5 18.2155C13.6269 18.2155 11.8021 18.8102 10.2887 19.914C8.77529 21.0178 7.65144 22.5736 7.07911 24.3571H23.921Z"
-                  stroke="black"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-
-              <!-- Post 3 -->
-              <div class="p-2">
-                <h2
-                  class="text-lg font-semibold text-gray-800 hover:text-blue-500"
-                >
-                  Explore New Technologies
-                </h2>
-                <p class="mt-2 text-sm text-gray-600">
-                  Stay ahead with insights on cutting-edge tools and
-                  innovations.
-                </p>
-                <div class="mt-4">
-                  <a
-                    href="#"
-                    class="inline-block px-2 py-2 bg-teal-500 text-white text-sm font-medium rounded-lg hover:bg-teal-300 transition-colors"
-                  >
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Post 4 -->
-          <section>
-            <div
-              class="max-w bg-white rounded-lg shadow-md overflow-hidden transform transition-all hover:scale-105"
-            >
-              <svg
-                class="relative left-5 top-2"
-                width="31"
-                height="31"
-                viewBox="0 0 31 31"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M29.8929 23.25V27.6786C29.8929 28.2658 29.6596 28.8291 29.2443 29.2443C28.8291 29.6596 28.2659 29.8929 27.6786 29.8929H23.25M23.25 1.10715H27.6786C28.2659 1.10715 28.8291 1.34044 29.2443 1.7557C29.6596 2.17096 29.8929 2.73417 29.8929 3.32143V7.75M1.10718 7.75V3.32143C1.10718 2.73417 1.34047 2.17096 1.75573 1.7557C2.17099 1.34044 2.7342 1.10715 3.32146 1.10715H7.75003M7.75003 29.8929H3.32146C2.7342 29.8929 2.17099 29.6596 1.75573 29.2443C1.34047 28.8291 1.10718 28.2658 1.10718 27.6786V23.25M15.5 14.3929C16.6746 14.3929 17.801 13.9263 18.6315 13.0958C19.462 12.2652 19.9286 11.1388 19.9286 9.96429C19.9286 8.78976 19.462 7.66333 18.6315 6.83282C17.801 6.0023 16.6746 5.53572 15.5 5.53572C14.3255 5.53572 13.1991 6.0023 12.3686 6.83282C11.538 7.66333 11.0715 8.78976 11.0715 9.96429C11.0715 11.1388 11.538 12.2652 12.3686 13.0958C13.1991 13.9263 14.3255 14.3929 15.5 14.3929ZM23.921 24.3571C23.3486 22.5736 22.2248 21.0178 20.7114 19.914C19.198 18.8102 17.3732 18.2155 15.5 18.2155C13.6269 18.2155 11.8021 18.8102 10.2887 19.914C8.77529 21.0178 7.65144 22.5736 7.07911 24.3571H23.921Z"
-                  stroke="black"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <div class="p-2 relative">
-                <h2
-                  class="text-lg font-semibold text-gray-800 hover:text-blue-500"
-                >
-                  Healthy Living Tips
-                </h2>
-                <p class="mt-2 text-sm text-gray-600">
-                  Simple steps to improve your physical and mental well-being
-                  every day.
-                </p>
-                <div class="mt-4">
-                  <a
-                    href="#"
-                    class="inline-block px-2 py-2 bg-teal-500 text-white text-sm font-medium rounded-lg hover:bg-teal-300 transition-colors"
-                  >
-                    Read More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
+          <div class="flex items-center space-x-4 mt-4">
+          
         </div>
 
         <div
           id="newPostModal"
-          class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
         >
-          <div class="bg-white rounded-lg p-6 w-full max-w-lg">
+          <div class="bg-white rounded-lg p-6 w-full max-w-lg m-4">
             <div class="flex justify-between items-center mb-4">
               <h2 class="text-xl font-bold">Create New Post</h2>
               <button
@@ -381,33 +216,21 @@
                 <i data-lucide="x" class="w-6 h-6"></i>
               </button>
             </div>
-            <form class="space-y-4">
+            <form id="postForm" class="space-y-4">
               <div>
                 <label class="block text-gray-700 mb-2">Title</label>
                 <input
                   type="text"
+                  id="postTitle"
                   class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               <div>
                 <label class="block text-gray-700 mb-2">Content</label>
                 <textarea
+                  id="postContent"
                   class="w-full border rounded-lg px-4 py-2 h-32 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 ></textarea>
-              </div>
-              <div>
-                <label class="block text-gray-700 mb-2">Image</label>
-                <div
-                  class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center"
-                >
-                  <i
-                    data-lucide="upload"
-                    class="w-8 h-8 mx-auto mb-2 text-gray-400"
-                  ></i>
-                  <p class="text-gray-500">
-                    Drop your image here or click to upload
-                  </p>
-                </div>
               </div>
               <div class="flex justify-end space-x-3">
                 <button
@@ -419,14 +242,43 @@
                 </button>
                 <button
                   type="submit"
+                  id="createPostButton"
                   class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
                 >
                   Create Post
+                </button>
+                <button
+                  type="button"
+                  id="updatePostButton"
+                  class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition hidden"
+                  onclick="updatePostHandler()"
+                >
+                  Update Post
                 </button>
               </div>
             </form>
           </div>
         </div>
+
+        <div
+          id="postContentModal"
+          class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+        >
+          <div class="bg-white rounded-lg p-6 w-full max-w-lg m-4">
+            <div id="postsContent" class="space-y-4"></div>
+            <div class="flex justify-end">
+              <button
+                onclick="closePostContentModal()"
+                class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Posts Container -->
+        <div id="postsContainer"></div>
       </div>
     </main>
   </body>
